@@ -50,6 +50,24 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+
+/* logo */
+.logo {
+  height: 110px; /* increase from original */
+  width: auto;  /* keeps proportions */
+}
+
+.navbar img {
+  height: 50px;
+}
+
+.logo {
+  max-height: 280px;
+  width: auto;
+}
+
+/* body format */
+
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -160,10 +178,11 @@ h6 {
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
   color: var(--contrast-color);
+  text-transform: uppercase;
   background: var(--accent-color);
-  font-size: 14px;
+  font-size: 16px;
   padding: 8px 25px;
-  margin: 0 0 0 30px;
+  margin: 0 0 0 180px; /* eto yung sa contact margin */
   border-radius: 4px;
   transition: 0.3s;
 }
@@ -174,10 +193,19 @@ h6 {
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
-@media (max-width: 1200px) {
-  .header .logo {
-    order: 1;
+/* Logo resizing new line  */
+
+header .logo img {
+  height: 120px !important;
+  width: auto;
+  max-height: none !important;
+}
+
+@media (max-width: 768px) {
+  header .logo img {
+      height: 70px !important; /* smaller on mobile */
   }
+}
 
   .header .btn-getstarted {
     order: 2;
@@ -188,7 +216,6 @@ h6 {
   .header .navmenu {
     order: 3;
   }
-}
 
 .scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
@@ -218,8 +245,11 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    padding: 18px 15px;
-    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 15px; 
+    padding: 27px 23px;
+    font-size: 17px;
     font-family: var(--nav-font);
     font-weight: 400;
     display: flex;
@@ -240,7 +270,17 @@ h6 {
   .navmenu li:last-child a {
     padding-right: 0;
   }
+  .navmenu a:hover {
+    color: var(--nav-hover-color); /* change text color */
+    background-color: rgba(0, 0, 0, 0.05); /* subtle background highlight */
+    transform: scale(1.05); /* slightly enlarge */
+  }
 
+/* Active/Clicked effect */
+  .navmenu a:active {
+    transform: scale(0.95); /* slightly shrink when clicked */
+    transition: transform 0.1s ease; /* faster click animation */
+  }
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
