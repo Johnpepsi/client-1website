@@ -168,7 +168,6 @@ h6 {
 }
 
 .header .logo h1 {
-  font-size: 26px;
   text-transform: uppercase;
   margin: 0;
   font-weight: 700;
@@ -180,10 +179,10 @@ h6 {
   color: var(--contrast-color);
   text-transform: uppercase;
   background: var(--accent-color);
-  font-size: 16px;
-  padding: 8px 25px;
-  margin: 0 0 0 180px; /* eto yung sa contact margin */
-  border-radius: 4px;
+  font-size: 19px;
+  padding: 10px 25px;
+  margin: 0 0 0 190px; /* eto yung sa contact margin */
+  border-radius: 18px;
   transition: 0.3s;
 }
 
@@ -208,13 +207,15 @@ header .logo img {
 }
 
   .header .btn-getstarted {
-    order: 2;
-    margin: 0 15px 0 0;
-    padding: 6px 15px;
+    order: 1;
+    margin: 0 5px 0 0;
+    padding: 6px 20px;
   }
 
   .header .navmenu {
-    order: 3;
+    order: 1;
+    margin: 0 5px 0 0;
+    padding: 6px 70px;
   }
 
 .scrolled .header {
@@ -257,35 +258,39 @@ header .logo img {
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
   }
 
   .navmenu a i,
   .navmenu a:focus i {
     font-size: 12px;
     line-height: 0;
-    margin-left: 5px;
+    margin-left: 3px;
     transition: 0.3s;
   }
 
   .navmenu li:last-child a {
-    padding-right: 0;
+    padding-right: 15px;
   }
-  .navmenu a:hover {
-    color: var(--nav-hover-color); /* change text color */
-    background-color: rgba(0, 0, 0, 0.05); /* subtle background highlight */
-    transform: scale(1.05); /* slightly enlarge */
-  }
-
-/* Active/Clicked effect */
-  .navmenu a:active {
-    transform: scale(0.95); /* slightly shrink when clicked */
-    transition: transform 0.1s ease; /* faster click animation */
-  }
-  .navmenu li:hover>a,
-  .navmenu .active,
-  .navmenu .active:focus {
+  /* Hover effect */
+.navmenu a:hover {
     color: var(--nav-hover-color);
-  }
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scale(1.05);
+}
+
+/* Click effect */
+.navmenu a:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+
+/* Stay highlighted when active */
+.navmenu a.active {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--nav-hover-color);
+    transform: scale(1.05);
+ }
 }
 
 /* Navmenu - Mobile */

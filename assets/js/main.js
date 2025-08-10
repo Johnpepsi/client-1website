@@ -219,4 +219,33 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+    /**
+   * Highlight active menu link based on current page (supports URLs without .html)
+   */
+  window.addEventListener('load', function () {
+    // Get the current page path, remove trailing slash and .html if present
+    let currentPath = window.location.pathname
+      .replace(/\/$/, '')           // remove trailing slash
+      .replace(/\.html$/, '');      // remove .html extension
+
+    // Default to /index if at root
+    if (currentPath === '') currentPath = '/index';
+
+    // Remove any old active classes
+    document.querySelectorAll('#navmenu a').forEach(link => link.classList.remove('active'));
+
+    // Loop through links
+    document.querySelectorAll('#navmenu a').forEach(link => {
+      let linkPath = link.getAttribute('href')
+        .replace(/\/$/, '')         // remove trailing slash
+        .replace(/\.html$/, '');    // remove .html extension
+
+      // Match link and current path
+      if (linkPath === currentPath || ('/' + linkPath) === currentPath) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+
 })();
