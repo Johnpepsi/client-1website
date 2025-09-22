@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .resources {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+  
+  .resources h2 {
+    font-size: 2rem;
+    color: #0f4453; /* Deep teal, like your screenshot */
+    margin-bottom: 20px;
+  }
+  
+  /* Style the dropdown containers */
+  details {
+    background: #f2f2f2;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #e1e1e1;
+  }
+  
+  summary {
+    cursor: pointer;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #0f4453;
+    list-style: none;
+    position: relative;
+  }
+  
+  summary::marker {
+    display: none; /* Hide default arrow */
+  }
+  
+  /* Custom arrow */
+  summary::after {
+    content: "⌄";
+    font-size: 1.2rem;
+    color: #c6462a; /* Burnt orange/red */
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  details[open] summary::after {
+    transform: rotate(180deg);
+  }
+  
+  /* Dropdown content */
+  details p {
+    padding: 15px 20px;
+    margin: 0;
+    background: #fff;
+    border-top: 1px solid #ddd;
+  }
+  
+  details p a {
+    color: #c6462a;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  details p a:hover {
+    text-decoration: underline;
+  }
+  
