@@ -1907,3 +1907,36 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/* new template litters */
+/* Dog Profile Styling */
+
+.dog-profile {
+  padding: 80px 0;
+}
+
+.dog-name {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0b2c3d;
+  margin-bottom: 10px;
+}
+
+.dog-meta {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.badge-code {
+  color: #c0392b;
+  font-weight: 600;
+}
+
+.dog-description p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 18px;
+}
